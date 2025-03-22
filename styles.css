@@ -282,9 +282,11 @@ button:hover {
 }
 
 .video-iframe-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .video-iframe-container iframe {
