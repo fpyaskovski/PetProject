@@ -1,346 +1,346 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  
-   <meta name="referrer" content="no-referrer">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Этнический музей Республики Алтай</title>
-    <style>
-        * { box-sizing: border-box; }
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding-bottom: 20px;
-        }
-        
-        /* Навигация с логотипом */
-        .nav {
-            background: #2c4d32;
-            padding: 0.5rem 0.5rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-        }
-        
-        .nav a:hover {
-            opacity: 0.4;
-        }
-        
-        .nav-logo {
-            height: 60px;
-            width: auto;
-            border-radius: 4px;
-            margin-left: auto;
-        }
-
-        /* Секции и заголовки */
-        section {
-            padding: 4rem 1rem 2rem;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        section h1 { 
-            font-size: 2.5rem;
-            margin: 0.25em 0 0.125em;
-            text-align: center;
-        }
-        
-        section h2 {
-            font-size: 2rem;
-            margin: 0.2em 0 0.1em;
-            text-align: center;
-        }
-        
-        section h3 {
-            font-size: 1rem;
-            margin: 0.2em 0 0.1em;
-            text-align: center;
-            white-space: pre-line;
-        }
-
-        /* Формы */
-        form {
-            max-width: 500px;
-            margin: 1rem auto;
-            padding: 1.5rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            width: 100%;
-        }
-
-        input, button {
-            width: 100%;
-            padding: 0.8rem;
-            margin: 0.8rem 0;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        /* Изображения */
-        img {
-            display: block;
-            margin: 1.5rem auto;
-            max-width: 30%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* Кнопки */
-        button {
-            background: #2c4d32;
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 1rem;
-            font-size: 1.1rem;
-            transition: opacity 0.3s;
-        }
-
-        button:hover {
-            opacity: 0.9;
-        }
-
-        /* Социальные сети */
-        .social-block {
-            background: #f5f5f5;
-            padding: 2rem 1rem;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            transition: transform 0.3s;
-            font-size: 0.8rem;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-        }
-
-        .social-icon {
-            width: 30px;
-            height: 30px;
-            margin-right: 0.8rem;
-        }
-
-        /* Стили для галереи VK */
-        #vk_album {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                padding: 0.5rem;
-            }
-            .nav a {
-                font-size: 0.9rem;
-            }
-            .nav-logo {
-                height: 30px;
-            }
-            section h1 {
-                font-size: 2rem;
-            }
-            section h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="nav">
-        <div class="nav-links">
-            <a href="#home">Главная</a>
-            <a href="#gallery">Галерея</a>
-            <a href="#tour">Экскурсии</a>
-            <a href="#hotel">Проживание</a>
-            <a href="#contact">Контакты</a>
-        </div>
-        <img src="my_folder/logo.jpg" class="nav-logo" alt="Логотип музея">
-    </nav>
-
-    <section id="home">
-        <h1>Добро пожаловать в этнический музей Алтая</h1>
-            <img src="my_folder/logotext.jpg" alt="Музей">
-          <h3>Тубалары, «туба» (туба/ тува/ тума-кижи, йыш-кижи, тубалар) - этническая группа северных алтайцев, известны по китайским летописным источникам (конец V или начала VI веков) в форме «дубо», что в переводе означает «таежные лыжные охотничьи племена».
-В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».</h3>
-    </section>
-
-    <section id="gallery">
-        <h2>Фотогалерея</h2>
-        <div id="vk_album"></div>
-    </section>
-
-    <section id="tour">
-        <h2>Бронирование экскурсии</h2>
-        <form id="tourForm">
-            <input type="date" name="date" required placeholder="Дата">
-            <input type="number" name="people" required placeholder="Количество человек">
-           <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">
-            <button type="submit">Забронировать</button>
-        </form>
-    </section>
-
-    <section id="hotel">
-        <h2>Бронирование проживания</h2>
-        <form id="hotelForm">
-            <input type="date" name="checkin" required placeholder="Заезд">
-            <input type="date" name="checkout" required placeholder="Выезд">
-            <input type="number" name="guests" required placeholder="Количество гостей">
-            <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">
-            <button type="submit">Забронировать</button>
-        </form>
-    </section>
-
-    <section id="contact">
-        <h2>Связь с администрацией</h2>
-        <img src="my_folder/photo_1.jpg" alt="Пясковская Айтана">
-        <h3>Пясковская Айтана</h3>
-        <button onclick="window.open('https://t.me/Aitana_altay')">Написать в Telegram</button>
-    </section>
-
-    <div class="social-block">
-        <div class="social-links">
-            <a href="https://t.me/gotoaltay" class="social-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" 
-                     alt="Telegram" class="social-icon">
-                Мы в Телеграм
-            </a>
-            <a href="https://vk.com/tubalaryaltay" class="social-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" 
-                     alt="ВКонтакте" class="social-icon">
-                Мы ВКонтакте
-            </a>
-            <a href="https://ok.ru/profile/575194033870?utm_campaign=ios_share&utm_content=profile" class="social-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Odnoklassniki_%28OK%29_logo.svg" 
-                     alt="Одноклассники" class="social-icon">
-                Мы в Одноклассниках
-            </a>
-        </div>
-    </div>
-
-    <script>
-        const BOT_TOKEN = '7501814156:AAG7FHBSqWoucLC_nB-l6O7Bk1KEe4EM91c';
-        const CHAT_ID = '284561200';
-
-        document.getElementById('tourForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const message = `Новая экскурсия!\nДата: ${formData.get('date')}\nЛюдей: ${formData.get('people')}\nТелефон: ${formData.get('phone')}`;
-            sendToTelegram(message);
-        });
-
-        document.getElementById('hotelForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}\nНомер телефона: ${formData.get('contact_phone')}`;
-            sendToTelegram(message);
-        });
-
-        function sendToTelegram(text) {
-            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    chat_id: CHAT_ID,
-                    text: text
-                })
-            })
-            .then(response => alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.\nJаан Быйан!'))
-            .catch(error => alert('Ошибка отправки!'));
-        }
-    </script>
-<script src="https://vk.com/js/api/openapi.js"></script>
-<script>
-    // Конфигурация приложения
-    const APP_ID = 53307630;
-    const ACCESS_TOKEN = 'vk1.a.K2u5Ju8GWAUOFcGH0RfgHUHTmk5U5_gD5vFmo46jcNvt7mL0H_fSEwRAy37y-lRpj_acdoLrZ27tU9qbb0hCT8DmBVHQ4jSW2AuhPJvMbsXEDn5MvHBh9od9Lrd4Yr9NUPIavrepI5UiMa5dtcytpumM1_KIzwK3NIyvwo5hGK1Cc4qei1sW2GznsDAd_5oj'; // Замените на реальный токен
-    const GROUP_ID = -46181187;
-    const ALBUM_ID = 223777382;
-
-    // Инициализация API с токеном
-    VK.init({
-        apiId: APP_ID,
-        accessToken: ACCESS_TOKEN,
-        onlyWidgets: false // Разрешаем полный функционал API
-    }).then(() => {
-        console.log('VK API успешно инициализирован');
-        
-        // Проверка авторизации
-        return VK.Auth.getLoginStatus();
-    }).then(status => {
-        if (!status.session) {
-            // Запрашиваем права на доступ к фотографиям
-            return VK.Auth.login({scope: 'photos'});
-        }
-        return status;
-    }).then(() => {
-        // Загрузка приватного альбома
-        new VK.Widgets.Album(
-            'vk_album',
-            GROUP_ID,
-            ALBUM_ID,
-            {
-                width: '100%',
-                height: 800,
-                no_cover: 1,
-                access_token: ACCESS_TOKEN // Явная передача токена
-            },
-            function(widget) {
-                console.log('Виджет альбома загружен:', widget);
-                
-                // Дополнительные действия после загрузки
-                widget.addListener('photoSelected', (photoId) => {
-                    console.log('Выбрано фото:', photoId);
-                });
-            }
-        );
-    }).catch(err => {
-        console.error('Ошибка:', err);
-        
-        // Обработка ошибки авторизации
-        if (err.error === 'access_denied') {
-            alert('Требуется доступ к фотографиям!');
-        }
-    });
-</script>
-</body>
+<!DOCTYPE html>↩
+<html lang="ru">↩
+<head>↩
+  ↩
+   <meta name="referrer" content="no-referrer">↩
+    <meta name="referrer" content="no-referrer-when-downgrade">↩
+    <meta charset="UTF-8">↩
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">↩
+    <title>Этнический музей Республики Алтай</title>↩
+    <style>↩
+        * { box-sizing: border-box; }↩
+        body { ↩
+            font-family: Arial, sans-serif; ↩
+            margin: 0; ↩
+            padding-bottom: 20px;↩
+        }↩
+        ↩
+        /* Навигация с логотипом */↩
+        .nav {↩
+            background: #2c4d32;↩
+            padding: 0.5rem 0.5rem;↩
+            position: fixed;↩
+            width: 100%;↩
+            top: 0;↩
+            z-index: 100;↩
+            display: flex;↩
+            justify-content: space-between;↩
+            align-items: center;↩
+        }↩
+        ↩
+        .nav-links {↩
+            display: flex;↩
+            gap: 1rem;↩
+        }↩
+        ↩
+        .nav a {↩
+            color: white;↩
+            text-decoration: none;↩
+            font-size: 1.1rem;↩
+            transition: opacity 0.3s;↩
+        }↩
+        ↩
+        .nav a:hover {↩
+            opacity: 0.4;↩
+        }↩
+        ↩
+        .nav-logo {↩
+            height: 60px;↩
+            width: auto;↩
+            border-radius: 4px;↩
+            margin-left: auto;↩
+        }↩
+↩
+        /* Секции и заголовки */↩
+        section {↩
+            padding: 4rem 1rem 2rem;↩
+            min-height: 100vh;↩
+            display: flex;↩
+            flex-direction: column;↩
+            align-items: center;↩
+        }↩
+        ↩
+        section h1 { ↩
+            font-size: 2.5rem;↩
+            margin: 0.25em 0 0.125em;↩
+            text-align: center;↩
+        }↩
+        ↩
+        section h2 {↩
+            font-size: 2rem;↩
+            margin: 0.2em 0 0.1em;↩
+            text-align: center;↩
+        }↩
+        ↩
+        section h3 {↩
+            font-size: 1rem;↩
+            margin: 0.2em 0 0.1em;↩
+            text-align: center;↩
+            white-space: pre-line;↩
+        }↩
+↩
+        /* Формы */↩
+        form {↩
+            max-width: 500px;↩
+            margin: 1rem auto;↩
+            padding: 1.5rem;↩
+            border: 1px solid #ccc;↩
+            border-radius: 8px;↩
+            width: 100%;↩
+        }↩
+↩
+        input, button {↩
+            width: 100%;↩
+            padding: 0.8rem;↩
+            margin: 0.8rem 0;↩
+            font-size: 1rem;↩
+            border: 1px solid #ddd;↩
+            border-radius: 4px;↩
+        }↩
+↩
+        /* Изображения */↩
+        img {↩
+            display: block;↩
+            margin: 1.5rem auto;↩
+            max-width: 30%;↩
+            height: auto;↩
+            border-radius: 8px;↩
+        }↩
+↩
+        /* Кнопки */↩
+        button {↩
+            background: #2c4d32;↩
+            color: white;↩
+            border: none;↩
+            cursor: pointer;↩
+            padding: 1rem;↩
+            font-size: 1.1rem;↩
+            transition: opacity 0.3s;↩
+        }↩
+↩
+        button:hover {↩
+            opacity: 0.9;↩
+        }↩
+↩
+        /* Социальные сети */↩
+        .social-block {↩
+            background: #f5f5f5;↩
+            padding: 2rem 1rem;↩
+            text-align: center;↩
+            position: fixed;↩
+            bottom: 0;↩
+            width: 100%;↩
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);↩
+        }↩
+↩
+        .social-links {↩
+            display: flex;↩
+            justify-content: center;↩
+            gap: 2rem;↩
+            flex-wrap: wrap;↩
+        }↩
+↩
+        .social-link {↩
+            display: flex;↩
+            align-items: center;↩
+            text-decoration: none;↩
+            color: #333;↩
+            transition: transform 0.3s;↩
+            font-size: 0.8rem;↩
+        }↩
+↩
+        .social-link:hover {↩
+            transform: translateY(-3px);↩
+        }↩
+↩
+        .social-icon {↩
+            width: 30px;↩
+            height: 30px;↩
+            margin-right: 0.8rem;↩
+        }↩
+↩
+        /* Стили для галереи VK */↩
+        #vk_album {↩
+            max-width: 1200px;↩
+            margin: 2rem auto;↩
+            padding: 1rem;↩
+        }↩
+↩
+        @media (max-width: 768px) {↩
+            .nav {↩
+                padding: 0.5rem;↩
+            }↩
+            .nav a {↩
+                font-size: 0.9rem;↩
+            }↩
+            .nav-logo {↩
+                height: 30px;↩
+            }↩
+            section h1 {↩
+                font-size: 2rem;↩
+            }↩
+            section h2 {↩
+                font-size: 1.5rem;↩
+            }↩
+        }↩
+    </style>↩
+</head>↩
+<body>↩
+    <nav class="nav">↩
+        <div class="nav-links">↩
+            <a href="#home">Главная</a>↩
+            <a href="#gallery">Галерея</a>↩
+            <a href="#tour">Экскурсии</a>↩
+            <a href="#hotel">Проживание</a>↩
+            <a href="#contact">Контакты</a>↩
+        </div>↩
+        <img src="my_folder/logo.jpg" class="nav-logo" alt="Логотип музея">↩
+    </nav>↩
+↩
+    <section id="home">↩
+        <h1>Добро пожаловать в этнический музей Алтая</h1>↩
+            <img src="my_folder/logotext.jpg" alt="Музей">↩
+          <h3>Тубалары, «туба» (туба/ тува/ тума-кижи, йыш-кижи, тубалар) - этническая группа северных алтайцев, известны по китайским летописным источникам (конец V или начала VI веков) в форме «дубо», что в переводе означает «таежные лыжные охотничьи племена».↩
+В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».</h3>↩
+    </section>↩
+↩
+    <section id="gallery">↩
+        <h2>Фотогалерея</h2>↩
+        <div id="vk_album"></div>↩
+    </section>↩
+↩
+    <section id="tour">↩
+        <h2>Бронирование экскурсии</h2>↩
+        <form id="tourForm">↩
+            <input type="date" name="date" required placeholder="Дата">↩
+            <input type="number" name="people" required placeholder="Количество человек">↩
+           <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">↩
+            <button type="submit">Забронировать</button>↩
+        </form>↩
+    </section>↩
+↩
+    <section id="hotel">↩
+        <h2>Бронирование проживания</h2>↩
+        <form id="hotelForm">↩
+            <input type="date" name="checkin" required placeholder="Заезд">↩
+            <input type="date" name="checkout" required placeholder="Выезд">↩
+            <input type="number" name="guests" required placeholder="Количество гостей">↩
+            <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">↩
+            <button type="submit">Забронировать</button>↩
+        </form>↩
+    </section>↩
+↩
+    <section id="contact">↩
+        <h2>Связь с администрацией</h2>↩
+        <img src="my_folder/photo_1.jpg" alt="Пясковская Айтана">↩
+        <h3>Пясковская Айтана</h3>↩
+        <button onclick="window.open('https://t.me/Aitana_altay')">Написать в Telegram</button>↩
+    </section>↩
+↩
+    <div class="social-block">↩
+        <div class="social-links">↩
+            <a href="https://t.me/gotoaltay" class="social-link" target="_blank" rel="noopener noreferrer">↩
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" ↩
+                     alt="Telegram" class="social-icon">↩
+                Мы в Телеграм↩
+            </a>↩
+            <a href="https://vk.com/tubalaryaltay" class="social-link" target="_blank" rel="noopener noreferrer">↩
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" ↩
+                     alt="ВКонтакте" class="social-icon">↩
+                Мы ВКонтакте↩
+            </a>↩
+            <a href="https://ok.ru/profile/575194033870?utm_campaign=ios_share&utm_content=profile" class="social-link" target="_blank" rel="noopener noreferrer">↩
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Odnoklassniki_%28OK%29_logo.svg" ↩
+                     alt="Одноклассники" class="social-icon">↩
+                Мы в Одноклассниках↩
+            </a>↩
+        </div>↩
+    </div>↩
+↩
+    <script>↩
+        const BOT_TOKEN = '7501814156:AAG7FHBSqWoucLC_nB-l6O7Bk1KEe4EM91c';↩
+        const CHAT_ID = '284561200';↩
+↩
+        document.getElementById('tourForm').addEventListener('submit', function(e) {↩
+            e.preventDefault();↩
+            const formData = new FormData(this);↩
+            const message = `Новая экскурсия!\nДата: ${formData.get('date')}\nЛюдей: ${formData.get('people')}\nТелефон: ${formData.get('phone')}`;↩
+            sendToTelegram(message);↩
+        });↩
+↩
+        document.getElementById('hotelForm').addEventListener('submit', function(e) {↩
+            e.preventDefault();↩
+            const formData = new FormData(this);↩
+            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}\nНомер телефона: ${formData.get('contact_phone')}`;↩
+            sendToTelegram(message);↩
+        });↩
+↩
+        function sendToTelegram(text) {↩
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {↩
+                method: 'POST',↩
+                headers: { 'Content-Type': 'application/json' },↩
+                body: JSON.stringify({↩
+                    chat_id: CHAT_ID,↩
+                    text: text↩
+                })↩
+            })↩
+            .then(response => alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.\nJаан Быйан!'))↩
+            .catch(error => alert('Ошибка отправки!'));↩
+        }↩
+    </script>↩
+<script src="https://vk.com/js/api/openapi.js"></script>↩
+<script>↩
+    // Конфигурация приложения↩
+    const APP_ID = 53307630;↩
+    const ACCESS_TOKEN = 'vk1.a.K2u5Ju8GWAUOFcGH0RfgHUHTmk5U5_gD5vFmo46jcNvt7mL0H_fSEwRAy37y-lRpj_acdoLrZ27tU9qbb0hCT8DmBVHQ4jSW2AuhPJvMbsXEDn5MvHBh9od9Lrd4Yr9NUPIavrepI5UiMa5dtcytpumM1_KIzwK3NIyvwo5hGK1Cc4qei1sW2GznsDAd_5oj'; // Замените на реальный токен↩
+    const GROUP_ID = -46181187;↩
+    const ALBUM_ID = 223777382;↩
+↩
+    // Инициализация API с токеном↩
+    VK.init({↩
+        apiId: APP_ID,↩
+        accessToken: ACCESS_TOKEN,↩
+        onlyWidgets: false // Разрешаем полный функционал API↩
+    }).then(() => {↩
+        console.log('VK API успешно инициализирован');↩
+        ↩
+        // Проверка авторизации↩
+        return VK.Auth.getLoginStatus();↩
+    }).then(status => {↩
+        if (!status.session) {↩
+            // Запрашиваем права на доступ к фотографиям↩
+            return VK.Auth.login({scope: 'photos'});↩
+        }↩
+        return status;↩
+    }).then(() => {↩
+        // Загрузка приватного альбома↩
+        new VK.Widgets.Album(↩
+            'vk_album',↩
+            GROUP_ID,↩
+            ALBUM_ID,↩
+            {↩
+                width: '100%',↩
+                height: 800,↩
+                no_cover: 1,↩
+                access_token: ACCESS_TOKEN // Явная передача токена↩
+            },↩
+            function(widget) {↩
+                console.log('Виджет альбома загружен:', widget);↩
+                ↩
+                // Дополнительные действия после загрузки↩
+                widget.addListener('photoSelected', (photoId) => {↩
+                    console.log('Выбрано фото:', photoId);↩
+                });↩
+            }↩
+        );↩
+    }).catch(err => {↩
+        console.error('Ошибка:', err);↩
+        ↩
+        // Обработка ошибки авторизации↩
+        if (err.error === 'access_denied') {↩
+            alert('Требуется доступ к фотографиям!');↩
+        }↩
+    });↩
+</script>↩
+</body>↩
 </html>
