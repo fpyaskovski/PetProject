@@ -96,7 +96,7 @@
         }
 
         /* Изображения */
-        img {
+         {
             display: block;
             margin: 1.5rem auto;
             max-width: 30%;
@@ -198,19 +198,19 @@
             <a href="#hotel">Проживание</a>
             <a href="#contact">Контакты</a>
         </div>
-        <img src="my_folder/logo.jpg" class="nav-logo" alt="Логотип музея">
+        < src="my_folder/logo.jpg" class="nav-logo" alt="Логотип музея">
     </nav>
 
     <section id="home">
         <h1>Добро пожаловать в этнический музей Алтая</h1>
         <h3>Тубалары, «туба» (туба/ тува/ тума-кижи, йыш-кижи, тубалар) - этническая группа северных алтайцев, известны по китайским летописным источникам (конец V или начала VI веков) в форме «дубо», что в переводе означает «таежные лыжные охотничьи племена».
 В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».</h3>
-        <img src="my_folder/logotext.jpg" alt="Музей">
+        < src="my_folder/logotext.jpg" alt="Музей">
     </section>
 
-    <section id="gallery">
+  <section id="gallery">
         <h2>Фотогалерея</h2>
-        <div id="vk_albums"></div>
+        <div id="vk_album"></div> <!-- Изменили id контейнера -->
     </section>
 
     <section id="tour">
@@ -236,7 +236,7 @@
 
     <section id="contact">
         <h2>Связь с администрацией</h2>
-        <img src="my_folder/photo_1.jpg" alt="Пясковская Айтана">
+        < src="my_folder/photo_1.jpg" alt="Пясковская Айтана">
         <h3>Пясковская Айтана</h3>
         <button onclick="window.open('https://t.me/Aitana_altay')">Написать в Telegram</button>
     </section>
@@ -244,17 +244,17 @@
     <div class="social-block">
         <div class="social-links">
             <a href="https://t.me/Aitana_altay" class="social-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" 
+                < src="https://upload.wikimedia.org/wikipedia/commons/8/83/Telegram_2019_Logo.svg" 
                      alt="Telegram" class="social-icon">
                 Мы в Телеграм
             </a>
             <a href="https://vk.com/your_group" class="social-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" 
+                < src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" 
                      alt="ВКонтакте" class="social-icon">
                 Мы ВКонтакте
             </a>
             <a href="https://ok.ru/your_profile" class="social-link" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Odnoklassniki_%28OK%29_logo.svg" 
+                < src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Odnoklassniki_%28OK%29_logo.svg" 
                      alt="Одноклассники" class="social-icon">
                 Мы в Одноклассниках
             </a>
@@ -293,19 +293,25 @@
         }
     </script>
 
-    <script src="https://vk.com/js/api/openapi.js?169"></script>
+  <script src="https://vk.com/js/api/openapi.js?169"></script>
     <script>
+        // Инициализация VK API
         VK.init({
-            apiId: 53307649,
+            apiId: 53307630, // Ваш API ID приложения
             onlyWidgets: true
         });
 
-        VK.Widgets.Group("vk_albums", {
-            mode: 3,
-            width: "100%", 
-            height: "600px",
-            no_cover: 1
-        }, -535236440); // Используйте правильный ID группы
+        // Загрузка конкретного альбома
+        VK.Widgets.Album(
+            'vk_album', // ID контейнера
+            {
+                album_id: '-46181187_223777382', // ID нужного альбома
+                width: '100%',
+                height: '600px',
+                no_cover: 1
+            }, 
+            -46181187 // ID владельца альбома (группы)
+        );
     </script>
 </body>
 </html>
