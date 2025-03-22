@@ -224,12 +224,18 @@
         };
 
         // Функции для видео
-        const openVideoModal = (element) => {
-            const videoSrc = element.getAttribute('data-video-src');
-            const iframeHTML = `<iframe src="${videoSrc}" allowfullscreen></iframe>`;
-            document.getElementById('videoContainer').innerHTML = iframeHTML;
-            document.getElementById('videoModal').style.display = 'flex';
-        };
+const openVideoModal = (element) => {
+    const videoSrc = element.getAttribute('data-video-src');
+    const iframeHTML = `
+        <iframe 
+            src="${videoSrc}" 
+            allowfullscreen 
+            allow="autoplay; encrypted-media"
+        ></iframe>
+    `;
+    document.getElementById('videoContainer').innerHTML = iframeHTML;
+    document.getElementById('videoModal').style.display = 'flex';
+};
 
         const closeVideoModal = () => {
             document.getElementById('videoContainer').innerHTML = '';
