@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta name="referrer" content="no-referrer">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Этнический музей Республики Алтай</title>
@@ -287,31 +288,24 @@
     </script>
 <script src="https://vk.com/js/api/openapi.js?169"></script>
 <script>
-    // Инициализация с обработкой ошибок
-    VK.init({
-        apiId: 53307630,
-        onlyWidgets: true
-    }).then(() => {
-        console.log('VK API initialized');
-        
-        // Загрузка альбома
-        VK.Widgets.Album(
-            'vk_album',
-            {
-                album_id: 223777382, // Только цифры!
-                owner_id: -46181187, // ID группы с минусом
-                width: '100%',
-                height: '800px',
-                no_cover: 1
-            },
-            -46181187,
-            function(widget) {
-                console.log('Widget loaded:', widget);
-            }
-        );
-    }).catch(err => {
-        console.error('VK init error:', err);
-    });
+ VK.init({
+    apiId: 53307630,
+    onlyWidgets: true
+});
+
+VK.Widgets.Album(
+    "vk_album", 
+    -46181187, // ID группы с минусом
+    223777382, // ID альбома
+    {
+        width: "100%",
+        height: 800,
+        no_cover: 1
+    },
+    function(widget) {
+        console.log("Widget loaded:", widget);
+    }
+);
 </script>
 </body>
 </html>
