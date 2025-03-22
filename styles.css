@@ -110,6 +110,7 @@ section {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 /* Видео-контейнер */
+/* Контейнер для видео */
 .video-wrapper {
     max-width: 1200px;
     margin: 2rem auto;
@@ -122,8 +123,10 @@ section {
     border-radius: 12px;
     box-shadow: var(--shadow);
     border: none;
+    background: #000; /* Фон при загрузке */
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
     .gallery-video {
         height: 300px;
