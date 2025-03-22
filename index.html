@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Этнический музей Республики Алтай</title>
     <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <!-- Остальное содержимое без изменений -->
     <nav class="nav">
         <div class="nav-links">
             <a href="#home">Главная</a>
@@ -20,85 +20,37 @@
         <img src="my_folder/logo.jpg" class="nav-logo" alt="Логотип музея">
     </nav>
 
-<section id="home">
-    <h1>Добро пожаловать в этнический музей Алтая</h1>
-    <div class="content-wrapper">
-        <img src="my_folder/logotext.jpg" alt="Музей" class="main-image">
-        <div class="text-content">
-            <h3>Тубалары («туба», тува, тума-кижи) - этническая группа северных алтайцев. 
-                Упоминаются в китайских хрониках V-VI вв. как «дубо» - «таёжные охотники-лыжники».
-                <br><br>
-                По словам В.В. Радлова: «Черневые татары (йыш-кижи) населяют горные районы 
-                между Телецким озером и Катунью. Потомки древних самоедских племён, 
-                относятся к тюркам-тугю».</h3>
+    <section id="home">
+        <h1>Добро пожаловать в этнический музей Алтая</h1>
+        <div class="content-wrapper">
+            <img src="my_folder/logotext.jpg" alt="Музей" class="main-image">
+            <div class="text-content">
+                <h3>Тубалары («туба», тува, тума-кижи) - этническая группа северных алтайцев. 
+                    Упоминаются в китайских хрониках V-VI вв. как «дубо» - «таёжные охотники-лыжники».<br><br>
+                    По словам В.В. Радлова: «Черневые татары (йыш-кижи) населяют горные районы 
+                    между Телецким озером и Катунью. Потомки древних самоедских племён, 
+                    относятся к тюркам-тугю».</h3>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    .content-wrapper {
-        display: flex;
-        gap: 2rem;
-        align-items: flex-start;
-        margin-top: 2rem;
-    }
-
-    .main-image {
-        width: 45%;
-        max-width: 600px;
-        height: auto;
-        object-fit: cover;
-        border-radius: 8px;
-        flex-shrink: 0;
-    }
-
-    .text-content {
-        flex: 1;
-        padding: 0 1rem;
-    }
-
-    .text-content h3 {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        margin: 0;
-        text-align: left;
-        white-space: normal;
-    }
-
-    @media (max-width: 768px) {
-        .content-wrapper {
-            flex-direction: column;
-        }
-        
-        .main-image {
-            width: 100%;
-            max-width: none;
-        }
-        
-        .text-content h3 {
-            font-size: 1rem;
-            text-align: justify;
-        }
-    }
-</style>
-
-<section id="gallery">
-    <h2>Фотогалерея</h2>
-    <div class="gallery-container">
-        <img src="my_folder/img1.jpg" alt="Музей">
-        <img src="my_folder/img2.jpg" alt="Музей">
-        <img src="my_folder/img3.jpg" alt="Музей">
-        <img src="my_folder/img4.jpg" alt="Музей">
-        <img src="my_folder/img5.jpg" alt="Музей">
-    </div>
-</section>
+    <section id="gallery">
+        <h2>Фотогалерея</h2>
+        <div class="gallery-container">
+            <img src="my_folder/img1.jpg" alt="Музей">
+            <img src="my_folder/img2.jpg" alt="Музей">
+            <img src="my_folder/img3.jpg" alt="Музей">
+            <img src="my_folder/img4.jpg" alt="Музей">
+            <img src="my_folder/img5.jpg" alt="Музей">
+        </div>
+    </section>
 
     <section id="tour">
         <h2>Бронирование экскурсии</h2>
         <form id="tourForm">
             <input type="date" name="date" required placeholder="Дата">
             <input type="number" name="people" required placeholder="Количество человек">
-           <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">
+            <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">
             <button type="submit">Забронировать</button>
         </form>
     </section>
@@ -155,7 +107,7 @@
         document.getElementById('hotelForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}\nНомер телефона: ${formData.get('contact_phone')}`;
+            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}\nНомер телефона: ${formData.get('phone')}`;
             sendToTelegram(message);
         });
 
