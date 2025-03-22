@@ -9,26 +9,47 @@
         body { 
             font-family: Arial, sans-serif; 
             margin: 0; 
-            padding-bottom: 60px; /* Добавим отступ для соц-блока */
+            padding-bottom: 60px;
         }
         
+        /* Навигация с логотипом */
         .nav {
             background: #2c4d32;
-            padding: 1rem;
+            padding: 0.5rem 1rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+        
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
         .nav a {
             color: white;
             text-decoration: none;
-            margin: 0 1rem;
             font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+        
+        .nav a:hover {
+            opacity: 0.8;
+        }
+        
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            border-radius: 4px;
         }
 
+        /* Секции и заголовки */
         section {
-            padding: 4rem 1rem 2rem; /* Увеличил верхний отступ */
+            padding: 4rem 1rem 2rem;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -37,14 +58,17 @@
         
         section h1 { 
             font-size: 2.5rem;
-            margin: 1em 0 0.5em;
+            margin: 0.25em 0 0.125em;
+            text-align: center;
         }
         
         section h2 {
             font-size: 2rem;
-            margin: 0.8em 0 0.4em;
+            margin: 0.2em 0 0.1em;
+            text-align: center;
         }
 
+        /* Формы */
         form {
             max-width: 500px;
             margin: 1rem auto;
@@ -59,8 +83,11 @@
             padding: 0.8rem;
             margin: 0.8rem 0;
             font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
         }
 
+        /* Изображения */
         img {
             display: block;
             margin: 1.5rem auto;
@@ -69,6 +96,7 @@
             border-radius: 8px;
         }
 
+        /* Кнопки */
         button {
             background: #2c4d32;
             color: white;
@@ -83,7 +111,7 @@
             opacity: 0.9;
         }
 
-        /* Стили для соц-блока */
+        /* Социальные сети */
         .social-block {
             background: #f5f5f5;
             padding: 2rem 1rem;
@@ -119,19 +147,40 @@
             height: 40px;
             margin-right: 0.8rem;
         }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 0.5rem;
+            }
+            .nav a {
+                font-size: 0.9rem;
+            }
+            .nav-logo {
+                height: 30px;
+            }
+            section h1 {
+                font-size: 2rem;
+            }
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="nav">
-        <a href="#home">Главная</a>
-        <a href="#tour">Экскурсии</a>
-        <a href="#hotel">Проживание</a>
-        <a href="#contact">Контакты</a>
+        <div class="nav-links">
+            <a href="#home">Главная</a>
+            <a href="#tour">Экскурсии</a>
+            <a href="#hotel">Проживание</a>
+            <a href="#contact">Контакты</a>
+        </div>
+        <img src="my_folder/logotext.jpg" class="nav-logo" alt="Логотип музея">
     </nav>
 
     <section id="home">
         <h1>Добро пожаловать в этнический музей Алтая</h1>
-        <img src="my_folder/logotext.jpg" alt="Логотип музея">
+        <img src="my_folder/logotext.jpg" alt="Музей">
     </section>
 
     <section id="tour">
