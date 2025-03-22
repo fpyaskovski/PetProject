@@ -46,11 +46,18 @@
         <!-- Секция "Галерея" -->
         <section id="gallery">
             <h2>Кӧрӱмдердиҥ jыйнагы<br><small>Галерея</small></h2>
-            
-            <!-- Виджет VK -->
-            <div class="vk-video-container">
-                <div id="vk-video-widget"></div>
-            </div>
+            <!-- Превью видео -->
+             <div class="video-wrapper">
+        <div class="video-preview" 
+             data-video-src="https://ваша_прямая_ссылка_на_видео.mp4" 
+             onclick="openVideoModal(this)">
+            <img src="./my_folder/video-preview.jpg" 
+                 alt="Превью видео" 
+                 loading="lazy"
+                 decoding="async">
+            <div class="play-button"></div>
+        </div>
+    </div>
 
             <!-- Галерея изображений -->
             <div class="gallery-container">
@@ -139,12 +146,14 @@
     </div>
 
     <!-- Виджет VK -->
-    <div class="video-modal" id="videoModal">
-        <div class="video-modal-content">
-            <span class="modal-close" onclick="closeVideoModal()">&times;</span>
-            <div class="video-iframe-container" id="videoContainer"></div>
-        </div>
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+        <span class="modal-close" onclick="closeVideoModal()">&times;</span>
+        <video controls id="videoPlayer" class="video-iframe-container">
+            <source src="" type="video/mp4">
+        </video>
     </div>
+</div>
 
     <!-- Социальные сети -->
     <div class="social-block">
@@ -226,17 +235,25 @@
         };
 
         // Функции для видео
-        const openVideoModal = (element) => {
-            const videoSrc = element.getAttribute('data-video-src');
-            const iframeHTML = `<iframe src="${videoSrc}" allowfullscreen></iframe>`;
-            document.getElementById('videoContainer').innerHTML = iframeHTML;
-            document.getElementById('videoModal').style.display = 'flex';
-        };
+     const openVideoModal = (element) => {
+        const videoSrc = element.getAttribute('data-video-src');
+        const videoPlayer = document.getElementById('videoPlayer');
+        
+        // Устанавливаем источник видео
+        videoPlayer.querySelector('source').src = videoSrc;
+        videoPlayer.load(); // Перезагружаем видео
+        videoPlayer.play(); // Автовоспроизведение (опционально)
+        
+        // Показываем модальное окно
+        document.getElementById('videoModal').style.display = 'flex';
+    };
 
-        const closeVideoModal = () => {
-            document.getElementById('videoContainer').innerHTML = '';
-            document.getElementById('videoModal').style.display = 'none';
-        };
+      const closeVideoModal = () => {
+        const videoPlayer = document.getElementById('videoPlayer');
+        videoPlayer.pause(); // Останавливаем видео
+        videoPlayer.querySelector('source').src = ''; // Очищаем источник
+        document.getElementById('videoModal').style.display = 'none';
+    };
 
         window.onclick = (e) => {
             if (e.target === document.getElementById('videoModal')) closeVideoModal();
