@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #B7317D;     /* Новый розово-пурпурный основной цвет */
-    --secondary-color: #880000;   /* Бордовый */
-    --accent-color: #908060;      /* Бежевый */
+    --primary-color: #90B060;     /* Зеленыый основной цвет */
+    --secondary-color: #B7317D;   /* Розовый */
+    --accent-color: #FFB0800;      /* Желтый */
     --background-light: #f8f8f8;
     --text-dark: #333;
     --transition-fast: 0.3s ease;
