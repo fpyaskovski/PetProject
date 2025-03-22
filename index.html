@@ -290,31 +290,57 @@
     </script>
 <script src="https://vk.com/js/api/openapi.js"></script>
 <script>
+    // Конфигурация приложения
+    const APP_ID = 53307630;
+    const ACCESS_TOKEN = 'vk1.a.K2u5Ju8GWAUOFcGH0RfgHUHTmk5U5_gD5vFmo46jcNvt7mL0H_fSEwRAy37y-lRpj_acdoLrZ27tU9qbb0hCT8DmBVHQ4jSW2AuhPJvMbsXEDn5MvHBh9od9Lrd4Yr9NUPIavrepI5UiMa5dtcytpumM1_KIzwK3NIyvwo5hGK1Cc4qei1sW2GznsDAd_5oj'; // Замените на реальный токен
+    const GROUP_ID = -46181187;
+    const ALBUM_ID = 223777382;
+
+    // Инициализация API с токеном
     VK.init({
-        apiId: 53307630,
-        onlyWidgets: true
+        apiId: APP_ID,
+        accessToken: ACCESS_TOKEN,
+        onlyWidgets: false // Разрешаем полный функционал API
     }).then(() => {
-        console.log('VK API initialized');
+        console.log('VK API успешно инициализирован');
         
-        // Загрузка альбома
-        VK.Widgets.Album(
+        // Проверка авторизации
+        return VK.Auth.getLoginStatus();
+    }).then(status => {
+        if (!status.session) {
+            // Запрашиваем права на доступ к фотографиям
+            return VK.Auth.login({scope: 'photos'});
+        }
+        return status;
+    }).then(() => {
+        // Загрузка приватного альбома
+        new VK.Widgets.Album(
             'vk_album',
-            -46181187,    // ID группы с минусом
-            223777382,    // ID альбома
-            { 
-                width: '100%', 
+            GROUP_ID,
+            ALBUM_ID,
+            {
+                width: '100%',
                 height: 800,
-                no_cover: 1 
+                no_cover: 1,
+                access_token: ACCESS_TOKEN // Явная передача токена
             },
             function(widget) {
-                console.log('Widget loaded:', widget);
+                console.log('Виджет альбома загружен:', widget);
+                
+                // Дополнительные действия после загрузки
+                widget.addListener('photoSelected', (photoId) => {
+                    console.log('Выбрано фото:', photoId);
+                });
             }
         );
     }).catch(err => {
-        console.error('VK init error:', err);
+        console.error('Ошибка:', err);
+        
+        // Обработка ошибки авторизации
+        if (err.error === 'access_denied') {
+            alert('Требуется доступ к фотографиям!');
+        }
     });
 </script>
-    <script src="https://vk.com/js/api/openapi.js" crossorigin="anonymous"></script>
-
 </body>
 </html>
