@@ -232,16 +232,17 @@ button:hover {
     text-decoration: none;
     transition: transform var(--transition-fast);
 }
-
-.social-link:hover {
-    transform: translateY(-3px);
-}
-
 .social-icon {
     width: 28px;
     height: 28px;
     margin-right: 0.8rem;
-    filter: brightness(0) invert(1);
+    /* Убрать фильтр и добавить явное окрашивание */
+    fill: currentColor;
+    color: white;
+}
+.social-link:hover {
+    transform: translateY(-3px);
+    color: var(--accent-color);
 }
 
 /* Адаптивность */
