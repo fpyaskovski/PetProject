@@ -416,15 +416,22 @@ button:hover {
     }
 }
 small {
-    font-size: 0.6em;
-    color: rgba(102, 102, 102, 0.7);
+    font-size: 0.55em;
+    color: rgba(102, 102, 102, 0.4); /* Увеличена прозрачность до 60% */
     display: block;
-    margin-top: 0.2em;
+    margin-top: 0.1em;
     line-height: 1.4;
+    font-weight: 300;
+    transition: opacity 0.3s ease;
+
 }
 .nav-links a {
     line-height: 1.3;
     padding: 12px 8px;
+}
+
+.nav-link:hover small {
+    opacity: 0.8; /* Увеличиваем непрозрачность при наведении */
 }
 
 button {
