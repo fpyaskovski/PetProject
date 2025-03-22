@@ -196,10 +196,11 @@ button:hover {
 
 .social-block {
     background: var(--primary);
-    padding: 1.5rem;
+    padding: 1rem;
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 .social-links {
@@ -208,11 +209,23 @@ button:hover {
     gap: 2rem;
     flex-wrap: wrap;
 }
+.social-link {
+    display: flex;
+    align-items: center;
+    color: white !important;
+    text-decoration: none;
+    transition: transform var(--transition);
+}
 
 .social-icon {
     width: 28px;
     height: 28px;
-    margin-right: 0.8rem;
+    margin-right: 0.5rem;
+    fill: currentColor;
+}
+.social-link:hover {
+    transform: translateY(-3px);
+    color: var(--accent) !important;
 }
 
 .contact-wrapper {
