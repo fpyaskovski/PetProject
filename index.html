@@ -217,5 +217,15 @@
 
         document.addEventListener('DOMContentLoaded', init);
     </script>
+    <script>
+    // Добавить после функции init()
+    const loadImages = () => {
+        document.querySelectorAll('.gallery-item').forEach(img => {
+            img.onload = () => img.classList.add('loaded');
+            if (img.complete) img.classList.add('loaded');
+        });
+    };
+    window.addEventListener('load', loadImages);
+</script>
 </body>
 </html>
