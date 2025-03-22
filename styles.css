@@ -415,3 +415,10 @@ button:hover {
         text-align: center;
     }
 }
+small {
+    font-size: 0.6em;
+    color: rgba(102, 102, 102, 0.7);
+    display: block;
+    margin-top: 0.2em;
+    line-height: 1.4;
+}
