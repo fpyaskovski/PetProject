@@ -169,6 +169,20 @@
             section h2 {
                 font-size: 1.5rem;
             }
+            /* Стили для галереи */
+#vk_albums {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.vk-album {
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+}
+            
         }
     </style>
 </head>
@@ -176,6 +190,7 @@
     <nav class="nav">
         <div class="nav-links">
             <a href="#home">Главная</a>
+            <a href="#gallery">Галерея</a> <!-- Новый пункт -->
             <a href="#tour">Экскурсии</a>
             <a href="#hotel">Проживание</a>
             <a href="#contact">Контакты</a>
@@ -190,6 +205,10 @@
 
         <img src="my_folder/logotext.jpg" alt="Музей">
     </section>
+                <section id="gallery">
+    <h2>Фотогалерея</h2>
+    <div id="vk_albums"></div>
+</section>
 
     <section id="tour">
         <h2>Бронирование экскурсии</h2>
@@ -271,6 +290,22 @@
             .then(response => alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.\n  Jаан Быйан!'))
             .catch(error => alert('Ошибка отправки!'));
         }
+        <script src="https://vk.com/js/api/openapi.js?169"></script>
+<script>
+    // Настройки VK API
+    VK.init({
+        apiId: 53307630, // Замените на ваш API ID
+        onlyWidgets: true
+    });
+
+    // Загрузка альбомов
+    VK.Widgets.Group("vk_albums", {
+        mode: 3, // Режим отображения альбомов
+        width: "100%", 
+        height: "600px",
+        no_cover: 1
+    }, -46181187_303680023); // Замените 12345678 на ID группы или пользователя
+</script>
     </script>
 </body>
 </html>
