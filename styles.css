@@ -416,7 +416,7 @@ button:hover {
     }
 }
 small {
-    font-size: 0.55em;
+    font-size: 0.70em;
     color: rgba(102, 102, 102, 0.4); /* Увеличена прозрачность до 60% */
     display: block;
     margin-top: 0.1em;
