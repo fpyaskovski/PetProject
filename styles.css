@@ -109,21 +109,20 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-/* Видео-контейнер */
+
 /* Контейнер для видео */
 .video-wrapper {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    width: 100%;
+    height: calc(100vh - 140px); /* Учитывает высоту навбара и заголовка */
+    margin: 0 auto;
+    position: relative;
 }
 
 .gallery-video {
     width: 100%;
-    height: 500px;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    height: 100%;
     border: none;
-    background: #000; /* Фон при загрузке */
+    object-fit: cover; /* Сохраняет пропорции и заполняет контейнер */
 }
 
 /* Адаптивность */
@@ -136,6 +135,21 @@ section {
 @media (max-width: 480px) {
     .gallery-video {
         height: 200px;
+    }
+}
+@media (max-width: 768px) {
+    .video-wrapper {
+        height: calc(100vh - 100px); /* Уменьшаем высоту для мобилок */
+    }
+    
+    #gallery {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-wrapper {
+        height: calc(100vh - 80px);
     }
 }
 .booking-grid {
