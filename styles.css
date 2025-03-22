@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #2c4d32;
+    --background-light: #f5f5f5;
+    --text-dark: #333;
+    --transition-fast: 0.3s ease;
+}
+
 * { 
     box-sizing: border-box; 
 }
@@ -6,10 +13,12 @@ body {
     font-family: Arial, sans-serif; 
     margin: 0; 
     padding-bottom: 20px;
+    line-height: 1.6;
 }
 
+/* Навигация */
 .nav {
-    background: #2c4d32;
+    background: var(--primary-color);
     padding: 0.5rem 1rem;
     position: fixed;
     width: 100%;
@@ -30,7 +39,7 @@ body {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: opacity 0.3s;
+    transition: opacity var(--transition-fast);
 }
 
 .nav a:hover { 
@@ -42,61 +51,10 @@ body {
     width: auto;
     border-radius: 4px;
     margin-left: auto;
-    transition: height 0.3s;
+    transition: height var(--transition-fast);
 }
 
-.content-wrapper {
-    display: flex;
-    flex-direction: row-reverse; /* Изменено направление */
-    gap: 2rem;
-    align-items: center; /* Центрирование по вертикали */
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 1200px;
-}
-
-.main-image {
-    width: 45%;
-    max-width: 600px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-
-  .text-content {
-        order: 2; /* Текст после изображения на мобильных */
-    }
-
-.text-content h3 {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 0;
-    text-align: left;
-}
-
-#gallery {
-    padding: 4rem 0 2rem;
-    min-height: 100vh;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-}
-
-.gallery-container {
-    display: flex;
-    height: calc(100vh - 6rem);
-    margin-top: 2rem;
-}
-
-#gallery img {
-    height: 100%;
-    width: 100vw;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    object-fit: cover;
-}
-
+/* Общие стили секций */
 section {
     padding: 4rem 1rem 2rem;
     min-height: 100vh;
@@ -118,12 +76,81 @@ section h2 {
 }
 
 section h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0.2em 0 0.1em;
-    text-align: center;
-    white-space: pre-line;
+    line-height: 1.6;
 }
 
+/* Блоки с контентом */
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem auto 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+#home .content-wrapper {
+    flex-direction: row-reverse;
+}
+
+.main-image {
+    width: 45%;
+    max-width: 600px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.text-content {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+/* Секция контактов */
+#contact .content-wrapper {
+    flex-direction: row;
+}
+
+#contact .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+#contact button {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    min-width: 220px;
+    transition: opacity var(--transition-fast);
+}
+
+/* Галерея */
+#gallery {
+    padding: 4rem 0 2rem;
+    min-height: 100vh;
+}
+
+.gallery-container {
+    display: flex;
+    height: calc(100vh - 6rem);
+    margin-top: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+#gallery img {
+    height: 100%;
+    width: 100vw;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+/* Формы */
 form {
     max-width: 500px;
     margin: 1rem auto;
@@ -140,26 +167,23 @@ input, button {
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
+    transition: border-color var(--transition-fast);
 }
 
 button {
-    background: #2c4d32;
-    color: white;
     border: none;
     cursor: pointer;
-    padding: 1rem;
     font-size: 1.1rem;
-    transition: opacity 0.3s;
 }
 
 button:hover {
     opacity: 0.9;
 }
 
+/* Социальные иконки */
 .social-block {
-    background: #f5f5f5;
+    background: var(--background-light);
     padding: 1rem;
-    text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -175,7 +199,6 @@ button:hover {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    align-items: center;
 }
 
 .social-link {
@@ -183,9 +206,8 @@ button:hover {
     align-items: center;
     padding: 0.5rem;
     text-decoration: none;
-    color: #333;
-    transition: all 0.3s;
-    font-size: 0.9rem;
+    color: var(--text-dark);
+    transition: transform var(--transition-fast);
 }
 
 .social-link:hover {
@@ -198,60 +220,74 @@ button:hover {
     margin-right: 0.5rem;
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
-   .content-wrapper {
-        flex-direction: column; /* На мобильных сохраняем вертикальный порядок */
+    .content-wrapper {
+        flex-direction: column;
     }
-  .main-image {
+
+    .main-image {
         width: 100%;
-        order: 1; /* Изображение будет первым в мобильной версии */
+        max-width: none;
     }
-    .text-content h3 { 
-        font-size: 1rem; 
-        text-align: justify; 
+
+    #contact .text-content {
+        align-items: center;
+        text-align: center;
     }
-    #gallery h2 { 
-        top: 4.5rem; 
-        font-size: 1.5rem; 
+
+    #contact button {
+        width: 100%;
     }
-    .gallery-container { 
-        height: calc(100vh - 5rem); 
+
+    .nav {
+        padding: 0.5rem;
+        min-height: 50px;
     }
-    .nav { 
-        padding: 0.5rem; 
-        min-height: 50px; 
+
+    .nav-logo {
+        height: 40px;
     }
-    .nav-logo { 
-        height: 40px; 
+
+    .social-block {
+        padding: 0.8rem;
+        min-height: 60px;
     }
-    .social-block { 
-        padding: 0.8rem; 
-        min-height: 60px; 
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
     }
-    .social-icon { 
-        width: 20px; 
-        height: 20px; 
+
+    section h1 {
+        font-size: 2rem;
     }
-    section h1 { 
-        font-size: 2rem; 
+
+    section h2 {
+        font-size: 1.5rem;
     }
-    section h2 { 
-        font-size: 1.5rem; 
+
+    section h3 {
+        font-size: 1rem;
+        text-align: justify;
     }
 }
 
 @media (max-width: 480px) {
-    .nav { 
-        min-height: 45px; 
+    .nav {
+        min-height: 45px;
     }
-    .nav-links { 
-        gap: 0.5rem; 
+
+    .nav-links {
+        gap: 0.5rem;
     }
-    .nav a { 
-        font-size: 0.8rem; 
+
+    .nav a {
+        font-size: 0.8rem;
     }
-    .social-block { 
-        min-height: 55px; 
-        padding: 0.6rem; 
+
+    .social-block {
+        min-height: 55px;
+        padding: 0.6rem;
     }
 }
