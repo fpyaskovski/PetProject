@@ -47,8 +47,9 @@ body {
 
 .content-wrapper {
     display: flex;
+    flex-direction: row-reverse; /* Изменено направление */
     gap: 2rem;
-    align-items: flex-start;
+    align-items: center; /* Центрирование по вертикали */
     margin-top: 2rem;
     width: 90%;
     max-width: 1200px;
@@ -63,10 +64,9 @@ body {
     flex-shrink: 0;
 }
 
-.text-content {
-    flex: 1;
-    padding: 0 1rem;
-}
+  .text-content {
+        order: 2; /* Текст после изображения на мобильных */
+    }
 
 .text-content h3 {
     font-size: 1.1rem;
@@ -199,11 +199,12 @@ button:hover {
 }
 
 @media (max-width: 768px) {
-    .content-wrapper { 
-        flex-direction: column; 
+   .content-wrapper {
+        flex-direction: column; /* На мобильных сохраняем вертикальный порядок */
     }
-    .main-image { 
-        width: 100%; 
+  .main-image {
+        width: 100%;
+        order: 1; /* Изображение будет первым в мобильной версии */
     }
     .text-content h3 { 
         font-size: 1rem; 
