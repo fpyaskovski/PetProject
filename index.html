@@ -51,7 +51,52 @@
         margin-left: auto;
         transition: height 0.3s;
     }
+ /* Стили для секции галереи */
+    #gallery {
+        padding: 4rem 0 2rem;
+        min-height: 100vh;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 100%;
+    }
 
+    #gallery h2 {
+        position: fixed;
+        top: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+    }
+
+    .gallery-container {
+        display: flex;
+        height: calc(100vh - 6rem);
+        margin-top: 2rem;
+    }
+
+    #gallery img {
+        height: 100%;
+        width: 100vw;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        object-fit: cover;
+        border-radius: 0;
+    }
+
+    @media (max-width: 768px) {
+        #gallery h2 {
+            top: 4.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .gallery-container {
+            height: calc(100vh - 5rem);
+        }
+    }
         /* Секции и заголовки */
         section {
             padding: 4rem 1rem 2rem;
@@ -236,14 +281,16 @@
 В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».</h3>
     </section>
 
-    <section id="gallery">
-        <h2>Фотогалерея</h2>
+<section id="gallery">
+    <h2>Фотогалерея</h2>
+    <div class="gallery-container">
         <img src="my_folder/img1.jpg" alt="Музей">
-         <img src="my_folder/img2.jpg" alt="Музей">
-         <img src="my_folder/img3.jpg" alt="Музей">
-         <img src="my_folder/img4.jpg" alt="Музей">
-         <img src="my_folder/img5.jpg" alt="Музей">
-    </section>
+        <img src="my_folder/img2.jpg" alt="Музей">
+        <img src="my_folder/img3.jpg" alt="Музей">
+        <img src="my_folder/img4.jpg" alt="Музей">
+        <img src="my_folder/img5.jpg" alt="Музей">
+    </div>
+</section>
 
     <section id="tour">
         <h2>Бронирование экскурсии</h2>
