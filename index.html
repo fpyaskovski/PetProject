@@ -68,38 +68,14 @@
             margin: 0.2em 0 0.1em;
             text-align: center;
         }
-    section h3 {
-            font-size: 1 rem;
+        
+        section h3 {
+            font-size: 1rem; /* Исправлен пробел в 1 rem */
             margin: 0.2em 0 0.1em;
             text-align: center;
+            white-space: pre-line; /* Для отображения \n */
         }
-        <!-- В секции галереи -->
-<section id="gallery">
-    <h2>Фотогалерея</h2>
-    <div class="gallery-grid">
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Экспозиция музея">
-        </div>
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Традиционные костюмы">
-        </div>
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Исторические артефакты">
-        </div>
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Интерьер музея">
-        </div>
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Этнические украшения">
-        </div>
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Музейный комплекс">
-        </div>
-        <div class="photo-item">
-            <img src="my_folder/logo.jpg" alt="Выставка">
-        </div>
-    </div>
-</section>
+
         /* Формы */
         form {
             max-width: 500px;
@@ -180,6 +156,20 @@
             margin-right: 0.8rem;
         }
 
+        /* Стили для галереи VK */
+        #vk_albums {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .vk-album {
+            margin-bottom: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
         @media (max-width: 768px) {
             .nav {
                 padding: 0.5rem;
@@ -196,20 +186,6 @@
             section h2 {
                 font-size: 1.5rem;
             }
-            /* Стили для галереи */
-#vk_albums {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-}
-
-.vk-album {
-    margin-bottom: 2rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-}
-            
         }
     </style>
 </head>
@@ -217,7 +193,7 @@
     <nav class="nav">
         <div class="nav-links">
             <a href="#home">Главная</a>
-            <a href="#gallery">Галерея</a> <!-- Новый пункт -->
+            <a href="#gallery">Галерея</a>
             <a href="#tour">Экскурсии</a>
             <a href="#hotel">Проживание</a>
             <a href="#contact">Контакты</a>
@@ -227,15 +203,15 @@
 
     <section id="home">
         <h1>Добро пожаловать в этнический музей Алтая</h1>
-        <h3>Тубалары, «туба» (туба/ тува/ тума-кижи, йыш-кижи, тубалар) - этническая группа северных алтайцев, известны по китайским летописным источникам (конец V или начала VI веков) в форме «дубо», что в переводе означает «таежные лыжные охотничьи племена».\n
-            В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».  <h3>
-
+        <h3>Тубалары, «туба» (туба/ тува/ тума-кижи, йыш-кижи, тубалар) - этническая группа северных алтайцев, известны по китайским летописным источникам (конец V или начала VI веков) в форме «дубо», что в переводе означает «таежные лыжные охотничьи племена».
+В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».</h3>
         <img src="my_folder/logotext.jpg" alt="Музей">
     </section>
-                <section id="gallery">
-    <h2>Фотогалерея</h2>
-    <div id="vk_albums"></div>
-</section>
+
+    <section id="gallery">
+        <h2>Фотогалерея</h2>
+        <div id="vk_albums"></div>
+    </section>
 
     <section id="tour">
         <h2>Бронирование экскурсии</h2>
@@ -253,7 +229,7 @@
             <input type="date" name="checkin" required placeholder="Заезд">
             <input type="date" name="checkout" required placeholder="Выезд">
             <input type="number" name="guests" required placeholder="Количество гостей">
-            <input type="number" name="phone" required placeholder="Номер телефона">
+            <input type="tel" name="contact_phone" required placeholder="Номер телефона"> <!-- Исправлено имя -->
             <button type="submit">Забронировать</button>
         </form>
     </section>
@@ -272,13 +248,11 @@
                      alt="Telegram" class="social-icon">
                 Мы в Телеграм
             </a>
-            
             <a href="https://vk.com/your_group" class="social-link" target="_blank" rel="noopener noreferrer">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" 
                      alt="ВКонтакте" class="social-icon">
                 Мы ВКонтакте
             </a>
-            
             <a href="https://ok.ru/your_profile" class="social-link" target="_blank" rel="noopener noreferrer">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Odnoklassniki_%28OK%29_logo.svg" 
                      alt="Одноклассники" class="social-icon">
@@ -301,7 +275,7 @@
         document.getElementById('hotelForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}\nНомер телефона: ${formData.get('phone')}`;
+            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}\nНомер телефона: ${formData.get('contact_phone')}`;
             sendToTelegram(message);
         });
 
@@ -314,25 +288,24 @@
                     text: text
                 })
             })
-            .then(response => alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.\n  Jаан Быйан!'))
+            .then(response => alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.\nJаан Быйан!'))
             .catch(error => alert('Ошибка отправки!'));
         }
-        <script src="https://vk.com/js/api/openapi.js?169"></script>
-<script>
-    // Настройки VK API
-    VK.init({
-        apiId: 53307630, // Замените на ваш API ID
-        onlyWidgets: true
-    });
+    </script>
 
-    // Загрузка альбомов
-    VK.Widgets.Group("vk_albums", {
-        mode: 3, // Режим отображения альбомов
-        width: "100%", 
-        height: "600px",
-        no_cover: 1
-    }, -46181187_165936111); // Замените 12345678 на ID группы или пользователя
-</script>
+    <script src="https://vk.com/js/api/openapi.js?169"></script>
+    <script>
+        VK.init({
+            apiId: 53307649,
+            onlyWidgets: true
+        });
+
+        VK.Widgets.Group("vk_albums", {
+            mode: 3,
+            width: "100%", 
+            height: "600px",
+            no_cover: 1
+        }, -46181187); // Используйте правильный ID группы
     </script>
 </body>
 </html>
