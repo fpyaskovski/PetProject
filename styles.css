@@ -1,28 +1,29 @@
 :root {
-    --primary-color: #90B060;     /* Зеленыый основной цвет */
-    --secondary-color: #B7317D;   /* Розовый */
-    --accent-color: #FFB0800;      /* Желтый */
-    --background-light: #f8f8f8;
-    --text-dark: #333;
-    --transition-fast: 0.3s ease;
+    --primary: #90B060;
+    --secondary: #B7317D;
+    --accent: #FFB080;
+    --background: #f8f8f8;
+    --text: #333;
+    --shadow: 0 2px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
 
-* { 
-    box-sizing: border-box; 
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body { 
-    font-family: 'Arial', sans-serif; 
+body {
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background: var(--background-light);
-    color: var(--text-dark);
+    background: var(--background);
+    color: var(--text);
+    padding-bottom: 80px;
 }
 
-/* Навигация */
 .nav {
-    background: var(--primary-color);
+    background: var(--primary);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -31,7 +32,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
 }
 
 .nav-links {
@@ -43,7 +44,7 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: opacity var(--transition-fast);
+    transition: opacity var(--transition);
 }
 
 .nav a:hover { 
@@ -53,165 +54,126 @@ body {
 .nav-logo {
     height: 50px;
     border-radius: 8px;
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition);
 }
 
 .nav-logo:hover {
     transform: scale(1.05);
 }
 
-/* Общие стили секций */
 section {
-    padding: 6rem 1.5rem 3rem;
+    padding: 6rem 1rem 2rem;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    scroll-margin-top: 60px;
 }
 
-section h1 { 
-    font-size: 2.8rem;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 2.4rem;
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-}
-
-/* Блоки с контентом */
 .content-wrapper {
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
-    margin: 2rem auto;
-    width: 90%;
     max-width: 1200px;
-}
-
-#home .content-wrapper {
-    flex-direction: row-reverse;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
 .main-image {
     width: 50%;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform var(--transition-fast);
+    box-shadow: var(--shadow);
+    transition: transform var(--transition);
 }
 
 .main-image:hover {
     transform: scale(1.02);
 }
 
-.text-content {
-    flex: 1;
-    padding: 0 2rem;
-}
-
-.text-content h3 {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-}
-
-/* Галерея */
-#gallery {
-    background: rgba(144, 128, 96, 0.05);
-}
-
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 2rem;
-    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
 }
 
-#gallery img {
+.gallery-item {
     width: 100%;
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: all var(--transition-fast);
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-#gallery img:hover {
+.gallery-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Формы */
-form {
-    background: white;
-    max-width: 500px;
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
     margin: 2rem auto;
+    padding: 1rem;
+}
+
+.booking-card {
+    background: white;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow);
 }
 
-input, button {
+.booking-card h3 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 1rem;
-    margin: 1rem 0;
-    border: 2px solid #ddd;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
     border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color var(--transition-fast);
 }
 
-input:focus {
-    border-color: var(--primary-color);
-    outline: none;
-}
-
-button {
-    background: var(--secondary-color);
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: -30px;
     color: white;
-    font-weight: bold;
+    font-size: 40px;
     cursor: pointer;
-    border: none;
-    transition: all var(--transition-fast);
+    transition: var(--transition);
 }
 
-button:hover {
-    background: #6a0000;
-    transform: translateY(-2px);
+.modal-close:hover {
+    color: var(--accent);
 }
 
-/* Секция контактов */
-#contact .content-wrapper {
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-#contact .text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-#contact button {
-    background: var(--accent-color);
-    padding: 1.2rem 2.5rem;
-    font-size: 1.1rem;
-}
-
-#contact button:hover {
-    background: #807050;
-}
-
-/* Социальные иконки */
 .social-block {
-    background: var(--primary-color);
+    background: var(--primary);
     padding: 1.5rem;
     position: fixed;
     bottom: 0;
@@ -225,91 +187,28 @@ button:hover {
     flex-wrap: wrap;
 }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    transition: transform var(--transition-fast);
-}
 .social-icon {
     width: 28px;
     height: 28px;
     margin-right: 0.8rem;
-    /* Убрать фильтр и добавить явное окрашивание */
-    fill: currentColor;
-    color: white;
-}
-.social-link:hover {
-    transform: translateY(-3px);
-    color: var(--accent-color);
-}
-
-/* Адаптивность */
-@media (max-width: 1024px) {
-    .content-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .main-image {
-        width: 70%;
-    }
-    
-    #contact .content-wrapper {
-        flex-direction: column-reverse;
-    }
+    filter: brightness(0) invert(1);
 }
 
 @media (max-width: 768px) {
-    section {
-        padding: 5rem 1rem 2rem;
-    }
-    
-    section h1 {
-        font-size: 2.2rem;
-    }
-    
-    section h2 {
-        font-size: 2rem;
+    .content-wrapper {
+        flex-direction: column;
     }
     
     .main-image {
-        width: 90%;
+        width: 100%;
     }
     
     .gallery-container {
         grid-template-columns: 1fr;
-        padding: 1rem;
     }
     
-    #gallery img {
-        height: 250px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-links {
-        gap: 1rem;
-    }
-    
-    .nav a {
-        font-size: 0.9rem;
-    }
-    
-    section h1 {
-        font-size: 1.8rem;
-    }
-    
-    section h2 {
-        font-size: 1.6rem;
-    }
-    
-    #gallery img {
-        height: 200px;
-    }
-    
-    form {
-        padding: 1.5rem;
+    .modal-close {
+        right: 0;
+        top: -50px;
     }
 }
