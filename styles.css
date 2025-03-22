@@ -1,3 +1,4 @@
+/* styles.css */
 :root {
     --primary: #90B060;
     --secondary: #B7317D;
@@ -9,6 +10,7 @@
     --transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+/* Общие стили */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -28,6 +30,7 @@ body {
     padding-bottom: 80px;
 }
 
+/* Навигация */
 .nav {
     position: fixed;
     top: 0;
@@ -72,6 +75,7 @@ body {
     transform: scale(1.05);
 }
 
+/* Секции */
 section {
     padding: 6rem 1rem 2rem;
     min-height: 100vh;
@@ -100,6 +104,7 @@ section {
     transform: scale(1.02);
 }
 
+/* Галерея */
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
@@ -129,20 +134,49 @@ section {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
+/* Видео */
 .video-wrapper {
     width: 100%;
-    height: calc(100vh - 140px);
     margin: 0 auto;
+}
+
+.video-preview {
     position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 2rem 0;
+    cursor: pointer;
 }
 
-.gallery-video {
+.video-preview img {
     width: 100%;
-    height: 100%;
-    border: none;
+    height: 450px;
     object-fit: cover;
+    border-radius: var(--radius);
 }
 
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.play-button::after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    transform: translate(-40%, -50%);
+    border: 20px solid transparent;
+    border-left: 30px solid var(--secondary);
+}
+
+/* Бронирование */
 .booking-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,6 +220,7 @@ button:hover {
     transform: translateY(-2px);
 }
 
+/* Модальные окна */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -227,6 +262,41 @@ button:hover {
     color: var(--accent);
 }
 
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 3000;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.video-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.video-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Социальные сети */
 .social-block {
     background: var(--primary);
     padding: 1rem;
@@ -263,6 +333,7 @@ button:hover {
     color: var(--accent) !important;
 }
 
+/* Контакты */
 .contact-wrapper {
     align-items: flex-start;
 }
@@ -272,6 +343,7 @@ button:hover {
     border-radius: var(--radius);
 }
 
+/* Меню */
 #downloads {
     padding: 4rem 1rem;
     background: rgba(144, 176, 96, 0.1);
@@ -347,132 +419,64 @@ button:hover {
     transform: translateY(-2px);
 }
 
-small {
-    font-size: 0.80em;
-    color: rgba(102, 102, 102, 0.6);
-    display: block;
-    margin-top: 0.1em;
-    line-height: 1.4;
-    font-weight: 300;
-    transition: opacity 0.5s ease;
-}
-
-.nav-links a {
-    line-height: 1.3;
-    padding: 12px 8px;
-}
-
+/* Адаптивность */
 @media (max-width: 768px) {
-    .gallery-video {
+    .video-preview img {
         height: 300px;
     }
-    .video-wrapper {
-        height: calc(100vh - 100px);
-    }
-    #gallery {
-        padding-top: 60px;
-    }
+    
     .content-wrapper {
         flex-direction: column;
     }
+    
     .main-image, .contact-image {
         width: 100%;
     }
+    
     .gallery-container {
         grid-template-columns: 1fr;
     }
+    
     .modal-close {
         right: 0;
         top: -50px;
         font-size: 30px;
     }
-    .booking-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media (max-width: 480px) {
-    .gallery-video {
-        height: 200px;
-    }
-    .video-wrapper {
-        height: calc(100vh - 80px);
-    }
     .nav-links {
         gap: 1rem;
     }
+    
     .nav a {
         font-size: 0.9rem;
     }
+    
     section h1 {
         font-size: 1.8rem;
     }
+    
     section h2 {
         font-size: 1.6rem;
     }
+    
     .download-card {
         flex-direction: column;
         text-align: center;
     }
+    
     .button-group {
         flex-direction: column;
     }
+    
     .preview-btn, .download-btn {
         width: 100%;
         text-align: center;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-    }
-}
-
 :focus-visible {
     outline: 2px solid var(--secondary);
     outline-offset: 2px;
-}
-/* Стили для модального окна с видео */
-.video-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 3000;
-    align-items: center;
-    justify-content: center;
-}
-
-.video-modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 1200px;
-}
-
-.video-iframe-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-}
-
-.video-iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.video-preview {
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.video-preview:hover {
-    transform: scale(1.02);
 }
