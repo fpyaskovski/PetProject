@@ -348,13 +348,13 @@ button:hover {
 }
 
 small {
-    font-size: 0.70em;
-    color: rgba(102, 102, 102, 0.4);
+    font-size: 0.80em;
+    color: rgba(102, 102, 102, 0.6);
     display: block;
     margin-top: 0.1em;
     line-height: 1.4;
     font-weight: 300;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
 }
 
 .nav-links a {
