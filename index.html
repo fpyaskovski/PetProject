@@ -51,14 +51,16 @@
 
         <section id="gallery">
             <h2>Кӧрӱмдердиҥ jыйнагы<br><small>Галерея</small></h2>
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://rutube.ru/play/embed/7771ad5837116af1c278f7743fbf7a66" 
-                    frameborder="0" 
-                    allowfullscreen
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    class="gallery-video"
-                ></iframe>
+             <div class="video-wrapper">
+        <div class="video-preview" 
+             data-video-src="https://vk.com/video535236440_456239630"
+             onclick="openVideoModal(this)">
+            <img src="my_folder/video-preview.jpg" 
+                 alt="Превью видео" 
+                 loading="lazy">
+            <div class="play-button"></div>
+        </div>
+    </div>
             </div>
             <div class="gallery-container">
                 <img src="my_folder/img1.jpg" alt="Экспонат" class="gallery-item" loading="lazy" decoding="async" width="400" height="300">
@@ -70,6 +72,12 @@
                 <img src="my_folder/img7.jpg" alt="Ловкая кыс" class="gallery-item" loading="lazy" decoding="async" width="400" height="300">
                 <img src="my_folder/img8.jpg" alt="Гордость" class="gallery-item" loading="lazy" decoding="async" width="400" height="300">
             </div>
+            <div class="video-modal" id="videoModal">
+    <div class="video-modal-content">
+        <span class="modal-close" onclick="closeVideoModal()">&times;</span>
+        <div class="video-iframe-container" id="videoContainer"></div>
+    </div>
+</div>
         </section>
 
         <section id="booking">
