@@ -8,13 +8,13 @@
         * { box-sizing: border-box; }
         body { font-family: Arial, sans-serif; margin: 0; }
         
-        /* Навигация */
         .nav {
             background: #2c4d32;
             padding: 1rem;
             position: fixed;
             width: 100%;
             top: 0;
+            z-index: 1000;
         }
         .nav a {
             color: white;
@@ -22,23 +22,47 @@
             margin: 0 1rem;
         }
 
-        /* Секции */
         section {
-            padding: 4rem 2rem 2rem;
+            padding: 3rem 1rem 1rem;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
-        /* Формы */
+        section h1, 
+        section h2 {
+            text-align: center;
+            margin: 0.5em 0;
+            width: 100%;
+        }
+
         form {
             max-width: 500px;
-            margin: 1rem auto;
+            margin: 0.5rem auto;
             padding: 1rem;
             border: 1px solid #ccc;
+            width: 100%;
         }
+
         input, button {
             width: 100%;
             padding: 0.5rem;
             margin: 0.5rem 0;
+        }
+
+        img {
+            display: block;
+            margin: 1rem auto;
+            max-width: 30%;
+            height: auto;
+        }
+
+        button {
+            background: #2c4d32;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -52,15 +76,15 @@
 
     <section id="home">
         <h1>Добро пожаловать в этнический музей Алтая</h1>
-        <img src="https://sun9-4.userapi.com/impg/pUe1qNr3KFkDZi_FW42YpWfHgPQqkxTZfc7sjw/t_Xe7FcahbQ.jpg?size=728x874&quality=95&sign=f092e078593fd9a89cb3a86eeaa11120&type=album" alt="Музей" style="width:30%">
+        <img src="https://sun9-4.userapi.com/impg/pUe1qNr3KFkDZi_FW42YpWfHgPQqkxTZfc7sjw/t_Xe7FcahbQ.jpg" alt="Музей">
     </section>
 
     <section id="tour">
         <h2>Бронирование экскурсии</h2>
         <form id="tourForm">
-            <input type="date" required placeholder="Дата">
-            <input type="number" required placeholder="Количество человек">
-            <input type="tel" required placeholder="Телефон">
+            <input type="date" name="date" required placeholder="Дата">
+            <input type="number" name="people" required placeholder="Количество человек">
+            <input type="tel" name="phone" required placeholder="Телефон">
             <button type="submit">Забронировать</button>
         </form>
     </section>
@@ -68,44 +92,40 @@
     <section id="hotel">
         <h2>Бронирование проживания</h2>
         <form id="hotelForm">
-            <input type="date" required placeholder="Заезд">
-            <input type="date" required placeholder="Выезд">
-            <input type="number" required placeholder="Количество гостей">
+            <input type="date" name="checkin" required placeholder="Заезд">
+            <input type="date" name="checkout" required placeholder="Выезд">
+            <input type="number" name="guests" required placeholder="Количество гостей">
             <button type="submit">Забронировать</button>
         </form>
     </section>
 
     <section id="contact">
         <h2>Связь с администрацией</h2>
-        <img src="https://sun9-42.userapi.com/s/v1/ig2/b_dKmJxuAbN00QP2-m1gFOWjZYFLN8GT58zvmYOGjQLP4HFP7J1jUNe9t0vwcwSwAVhjPgLOohCw8ePH3QfNyQPp.jpg?quality=95&blur=50,20&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&u=8uXfFJY5X74WwaJb6ra4rIdTbd7ZF_kes5MIobTFta0&cs=2560x1707" alt="Пясковская Айтана" style="width:30%">
+        <img src="https://sun9-42.userapi.com/s/v1/ig2/b_dKmJxuAbN00QP2-m1gFOWjZYFLN8GT58zvmYOGjQLP4HFP7J1jUNe9t0vwcwSwAVhjPgLOohCw8ePH3QfNyQPp.jpg" alt="Пясковская Айтана">
         <h2>Пясковская Айтана</h2>
-        <button onclick="window.open('https://t.me/ваш_телеграм_логин')">Написать в Telegram</button>
+        <button onclick="window.open('https://t.me/your_telegram')">Написать в Telegram</button>
     </section>
 
     <script>
-        // Настройки Telegram бота
         const BOT_TOKEN = '7501814156:AAG7FHBSqWoucLC_nB-l6O7Bk1KEe4EM91c';
         const CHAT_ID = '284561200';
 
-        // Отправка формы экскурсии
         document.getElementById('tourForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            const message = Новая экскурсия! Дата: ${formData.get(0)}, Людей: ${formData.get(1)}, Телефон: ${formData.get(2)};
+            const message = `Новая экскурсия!\nДата: ${formData.get('date')}\nЛюдей: ${formData.get('people')}\nТелефон: ${formData.get('phone')}`;
             sendToTelegram(message);
         });
 
-        // Отправка формы проживания
         document.getElementById('hotelForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(this);
-            const message = Бронь проживания! Заезд: ${formData.get(0)}, Выезд: ${formData.get(1)}, Гостей: ${formData.get(2)};
+            const message = `Бронь проживания!\nЗаезд: ${formData.get('checkin')}\nВыезд: ${formData.get('checkout')}\nГостей: ${formData.get('guests')}`;
             sendToTelegram(message);
         });
 
-        // Функция отправки в Telegram
         function sendToTelegram(text) {
-            fetch(https://api.telegram.org/bot${BOT_TOKEN}/sendMessage, {
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
