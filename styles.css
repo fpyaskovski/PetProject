@@ -378,3 +378,40 @@ button:hover {
         text-align: center;
     }
 }
+/* Группировка кнопок */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Кнопка предпросмотра */
+.preview-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--text) !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+}
+
+.preview-btn:hover {
+    background: var(--primary);
+    color: white !important;
+    transform: translateY(-2px);
+}
+
+/* Для мобилок */
+@media (max-width: 480px) {
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .preview-btn, .download-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
