@@ -160,7 +160,15 @@
     </div>
 
     <script>
-        const init = () => {
+        const init = ()
+            const loadImages = () => {
+        document.querySelectorAll('.gallery-item').forEach(img => {
+            img.onload = () => img.classList.add('loaded');
+            if (img.complete) img.classList.add('loaded');
+        });
+    };
+    window.addEventListener('load', loadImages);
+        => {
             const BOT_TOKEN = '7501814156:AAG7FHBSqWoucLC_nB-l6O7Bk1KEe4EM91c';
             const CHAT_ID = '284561200';
             
