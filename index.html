@@ -274,12 +274,67 @@
         <img src="my_folder/logo.jpg" class="nav-logo" alt="Логотип музея">
     </nav>
 
-    <section id="home">
-        <h1>Добро пожаловать в этнический музей Алтая</h1>
-            <img src="my_folder/logotext.jpg" alt="Музей">
-          <h3>Тубалары, «туба» (туба/ тува/ тума-кижи, йыш-кижи, тубалар) - этническая группа северных алтайцев, известны по китайским летописным источникам (конец V или начала VI веков) в форме «дубо», что в переводе означает «таежные лыжные охотничьи племена».
-В.В. Радлов писал: «Черневые татары - это перевод с татарского «йыш-кижи», т.к. все эти татары живут в горах, заросших хвойными лесами, между Телецким озером и Катунью. Их можно отнести к потомкам древних самоедских дубо (тофалары - карагасы, тубалары - алтайцы, тувинцы - урянхайцы), которые относятся к тюркам-тугю».</h3>
-    </section>
+<section id="home">
+    <h1>Добро пожаловать в этнический музей Алтая</h1>
+    <div class="content-wrapper">
+        <img src="my_folder/logotext.jpg" alt="Музей" class="main-image">
+        <div class="text-content">
+            <h3>Тубалары («туба», тува, тума-кижи) - этническая группа северных алтайцев. 
+                Упоминаются в китайских хрониках V-VI вв. как «дубо» - «таёжные охотники-лыжники».
+                <br><br>
+                По словам В.В. Радлова: «Черневые татары (йыш-кижи) населяют горные районы 
+                между Телецким озером и Катунью. Потомки древних самоедских племён, 
+                относятся к тюркам-тугю».</h3>
+        </div>
+    </div>
+</section>
+
+<style>
+    .content-wrapper {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+
+    .main-image {
+        width: 45%;
+        max-width: 600px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .text-content {
+        flex: 1;
+        padding: 0 1rem;
+    }
+
+    .text-content h3 {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 0;
+        text-align: left;
+        white-space: normal;
+    }
+
+    @media (max-width: 768px) {
+        .content-wrapper {
+            flex-direction: column;
+        }
+        
+        .main-image {
+            width: 100%;
+            max-width: none;
+        }
+        
+        .text-content h3 {
+            font-size: 1rem;
+            text-align: justify;
+        }
+    }
+</style>
 
 <section id="gallery">
     <h2>Фотогалерея</h2>
