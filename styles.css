@@ -480,3 +480,14 @@ button:hover {
     outline: 2px solid var(--secondary);
     outline-offset: 2px;
 }
+@media (max-width: 768px) {
+    .video-preview img {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-preview img {
+        height: 200px !important;
+    }
+}
