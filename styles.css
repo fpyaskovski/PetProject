@@ -491,3 +491,25 @@ button:hover {
         height: 200px !important;
     }
 }
+.vk-video-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+    .vk-video-container {
+        margin: 1rem auto;
+    }
+}
+
+/* Анимации для галереи */
+.gallery-item {
+    transition: transform 0.3s, opacity 0.5s;
+}
+
+.gallery-item.loaded {
+    opacity: 1 !important;
+}
