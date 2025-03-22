@@ -214,7 +214,7 @@
         <form id="tourForm">
             <input type="date" name="date" required placeholder="Дата">
             <input type="number" name="people" required placeholder="Количество человек">
-            <input type="tel" name="phone" required placeholder="Телефон">
+           <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">
             <button type="submit">Забронировать</button>
         </form>
     </section>
@@ -225,7 +225,7 @@
             <input type="date" name="checkin" required placeholder="Заезд">
             <input type="date" name="checkout" required placeholder="Выезд">
             <input type="number" name="guests" required placeholder="Количество гостей">
-            <input type="tel" name="contact_phone" required placeholder="Номер телефона">
+            <input type="tel" name="phone" pattern="\+7[0-9]{10}" required placeholder="+7XXXXXXXXXX">
             <button type="submit">Забронировать</button>
         </form>
     </section>
