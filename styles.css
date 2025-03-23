@@ -75,20 +75,52 @@ body {
     transform: scale(1.05);
 }
 
-/* Секции */
+/* ==================== СЕКЦИИ ==================== */
 section {
-    padding: 6rem 1rem 2rem;
-    min-height: 100vh;
-    scroll-margin-top: 60px;
+    padding: 4rem 1rem;
+    background: rgba(255,255,255,0.97);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 2rem auto;
+    max-width: 1200px;
+    transition: transform 0.3s ease;
+    scroll-margin-top: 80px;
 }
 
+section:hover {
+    transform: translateY(-3px);
+}
+
+section h2 {
+    color: var(--secondary);
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+section h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 70%;
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+/* Основной контент */
 .content-wrapper {
     display: flex;
     gap: 2rem;
     align-items: center;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
+    background: rgba(248,248,248,0.9);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+    margin: 1.5rem 0;
 }
 
 .main-image {
@@ -104,13 +136,15 @@ section {
     transform: scale(1.02);
 }
 
-/* Галерея */
+/* ==================== ГАЛЕРЕЯ ==================== */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Исправлено */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
-    max-width: 1400px;
+    background: rgba(248,248,248,0.9);
+    border-radius: var(--radius);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
     margin: 0 auto;
 }
 
@@ -134,10 +168,13 @@ section {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* Видео */
+/* ==================== ВИДЕО ==================== */
 .video-wrapper {
     width: 100%;
     margin: 0 auto;
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
 }
 
 .video-preview {
@@ -176,14 +213,15 @@ section {
     border-left: 30px solid var(--secondary);
 }
 
-/* Бронирование */
+/* ==================== БРОНИРОВАНИЕ ==================== */
 .booking-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
+    padding: 2rem;
+    background: rgba(248,248,248,0.9);
+    border-radius: var(--radius);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .booking-card {
@@ -220,7 +258,7 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Модальные окна */
+/* ==================== МОДАЛЬНЫЕ ОКНА ==================== */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -262,7 +300,6 @@ button:hover {
     color: var(--accent);
 }
 
-/* Добавьте в styles.css */
 .video-modal {
     display: none;
     position: fixed;
@@ -287,7 +324,7 @@ button:hover {
 
 .video-iframe-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
 }
@@ -301,7 +338,7 @@ button:hover {
     border: none;
 }
 
-/* Социальные сети */
+/* ==================== СОЦИАЛЬНЫЕ СЕТИ ==================== */
 .social-block {
     background: var(--primary);
     padding: 1rem;
@@ -338,9 +375,12 @@ button:hover {
     color: var(--accent) !important;
 }
 
-/* Контакты */
+/* ==================== КОНТАКТЫ ==================== */
 .contact-wrapper {
     align-items: flex-start;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
 }
 
 .contact-image {
@@ -348,10 +388,11 @@ button:hover {
     border-radius: var(--radius);
 }
 
-/* Меню */
+/* ==================== МЕНЮ ==================== */
 #downloads {
     padding: 4rem 1rem;
-    background: rgba(144, 176, 96, 0.1);
+    background: rgba(144, 176, 96, 0.08);
+    border-radius: var(--radius);
 }
 
 .downloads-container {
@@ -424,14 +465,21 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Адаптивность */
+/* ==================== АДАПТИВНОСТЬ ==================== */
 @media (max-width: 768px) {
-    .video-preview img {
-        height: 300px;
+    section {
+        margin: 1.5rem;
+        padding: 3rem 1rem;
+    }
+    
+    section h2 {
+        font-size: 1.7rem;
+        padding-left: 1rem;
     }
     
     .content-wrapper {
         flex-direction: column;
+        padding: 1.2rem;
     }
     
     .main-image, .contact-image {
@@ -440,6 +488,10 @@ button:hover {
     
     .gallery-container {
         grid-template-columns: 1fr;
+    }
+    
+    .video-preview img {
+        height: 300px !important;
     }
     
     .modal-close {
@@ -479,23 +531,17 @@ button:hover {
         width: 100%;
         text-align: center;
     }
+    
+    .video-preview img {
+        height: 200px !important;
+    }
 }
 
 :focus-visible {
     outline: 2px solid var(--secondary);
     outline-offset: 2px;
 }
-@media (max-width: 768px) {
-    .video-preview img {
-        height: 300px !important;
-    }
-}
 
-@media (max-width: 480px) {
-    .video-preview img {
-        height: 200px !important;
-    }
-}
 .vk-video-container {
     width: 100%;
     max-width: 800px;
@@ -504,6 +550,7 @@ button:hover {
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
+
 @media (max-width: 768px) {
     .vk-video-container {
         margin: 1rem auto;
@@ -517,107 +564,4 @@ button:hover {
 
 .gallery-item.loaded {
     opacity: 1 !important;
-}
-/* ==================== ГЛАВНАЯ СЕКЦИЯ ==================== */
-.hero-section {
-    text-align: center;
-    padding: 4rem 1rem;
-    background: linear-gradient(to right, var(--primary) 30%, var(--accent));
-}
-
-.hero-title {
-    margin-bottom: 3rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-.altay-text {
-    display: block;
-    font-size: 2.2em;
-    color: var(--background);
-    margin-bottom: 0.5rem;
-}
-
-.russian-text {
-    font-size: 1.4em;
-    color: rgba(255,255,255,0.9);
-    font-weight: 300;
-}
-
-/* Карточка проекта */
-.project-card {
-    max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.95);
-    border-radius: var(--radius);
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 1.5rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-}
-
-.project-icon img {
-    width: 100%;
-    filter: drop-shadow(0 2px 4px var(--secondary));
-}
-
-.project-slogan {
-    color: var(--secondary);
-    font-size: 1.8em;
-    margin-bottom: 1rem;
-}
-
-.project-description {
-    line-height: 1.8;
-    border-left: 3px solid var(--accent);
-    padding-left: 1rem;
-}
-
-.highlight {
-    color: var(--primary);
-    font-weight: 600;
-    position: relative;
-    padding: 0 0.3rem;
-}
-
-.highlight::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: currentColor;
-    opacity: 0.3;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-    .project-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .project-icon {
-        margin: 0 auto 1.5rem;
-        max-width: 80px;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .altay-text {
-        font-size: 1.6rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .project-slogan {
-        font-size: 1.4rem;
-    }
-    
-    .project-description {
-        font-size: 0.9rem;
-    }
 }
