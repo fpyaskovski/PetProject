@@ -256,6 +256,21 @@ const openVideoModal = (element) => {
         document.addEventListener('keydown', (e) => e.key === 'Escape' && closeVideoModal());
 
         document.addEventListener('DOMContentLoaded', init);
+        // Автоматическое добавление класса "loaded" для изображений галереи
+document.addEventListener("DOMContentLoaded", function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(img => {
+        // Проверка, загружено ли изображение
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+});
     </script>
 </body>
 </html>
