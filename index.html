@@ -29,13 +29,35 @@
     <main>
         <!-- Секция "Главная" -->
         <section id="home">
-            <h1>Кайырлу болзын Алтайдыҥ учун jаткан јерге!<br><small>Добро пожаловать в этнический музей Алтая</small></h1>
-            <h2>"Туба" Тубалар күчүрүнүҥ Центри проекти, Алтай Республиканыҥ Майма, Чой, Турочак районнарындагы 8-16 чаштыг школалар уулузар үчүн тубалар күчүрүн, чаштыг спорт, аш, тон, чуртыш, музыканы үйретеп, традиционный аил куруп, Алтайдыҥ төрөл күчүрүн, патриоттыг jана тынчтыг урукту уяндырып, тубалар миразын сактаарга жардам эткен.
+    <div class="hero-section">
+        <h1 class="hero-title">
+            <span class="altay-text">Кайырлу болзын Алтайдыҥ учун jаткан јерге!</span>
+            <span class="russian-text">Добро пожаловать в этнический музей Алтая</span>
+        </h1>
+        
+        <div class="project-card">
+            <div class="project-icon">
+                <img src="./my_folder/logo.svg" alt="Иконка проекта" aria-hidden="true">
+            </div>
+            <div class="project-content">
+                <h2 class="project-slogan">«Туба» — кӱчтиҥ учун jанып турган от</h2>
+                <div class="project-description">
+                    <p class="altay-text">
+                        Тубалар күчүрүнүҥ Центри проекти Алтай Республиканыҥ 8-16 чаштыг уулузарына:<br>
+                        <span class="highlight">Спорт</span> • <span class="highlight">Аш</span> • <span class="highlight">Тон</span><br>
+                        <span class="highlight">Чуртыш</span> • <span class="highlight">Музыка</span>
+                    </p>
+                    <p class="russian-text">
+                        Проект сохраняет наследие через 5 направлений:<br> 
+                        Традиционный аил становится живой школой, где дети учатся<br> 
+                        <em>«слышать голос предков в шелесте кедров»</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<br><small>Проект «Центр тубаларской культуры «Туба» в Республике Алтай направлен на создание развивающей среды для детей 8-16 лет из Майминского, Чойского и Турочакского районов через организацию традиционного аила и обучающую программу по пяти направлениям (кухня, спорт, одежда, быт, музыка), способствуя сохранению культурного наследия тубаларов, формированию патриотизма и межнационального согласия.
-
-</small></h2>
-            <div class="content-wrapper">
+  <div class="content-wrapper">
                 <div class="text-content">
               <h3>Тубалары: хранители таёжных традиций</h3>
 <div class="historical-context">
@@ -70,41 +92,98 @@
     <strong>Земледелие</strong> — неприхотливые посевы ячменя и овса на каменистых склонах.<br>
     <strong>Скотоводство</strong> — выносливые лошади, верные спутники в бескрайней тайге.</p>
 </div>
+        
+        <img src="./my_folder/logotext.jpg" 
+             alt="Традиционное жилище" 
+             class="main-image"
+             loading="lazy"
+             decoding="async">
+    </div>
+</section>
 
 <style>
-    .historical-context, .demography, .geography, .culture {
-        margin: 2rem 0;
-        padding: 1.5rem;
-        background: rgba(144, 176, 96, 0.05);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
+    /* Стили для секции */
+    .hero-section {
+        text-align: center;
+        padding: 4rem 1rem;
+        background: linear-gradient(to right, var(--primary) 30%, var(--accent));
     }
-    h4 {
-        color: var(--secondary);
-        margin-bottom: 1rem;
-        font-size: 1.4em;
+
+    .hero-title {
+        margin-bottom: 3rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-    .timeline {
-        list-style: none;
-        border-left: 3px solid var(--accent);
-        padding-left: 1.5rem;
-    }
-    .timeline li {
-        margin: 0.8rem 0;
-        position: relative;
-    }
-    .timeline li::before {
-        content: "▹";
-        color: var(--primary);
-        position: absolute;
-        left: -1.3rem;
-    }
-    .poetic {
-        font-style: italic;
-        color: #5a5a5a;
-        line-height: 1.6;
+
+    .altay-text {
         display: block;
-        margin-top: 0.5rem;
+        font-size: 2.2em;
+        color: var(--background);
+        margin-bottom: 0.5rem;
+    }
+
+    .russian-text {
+        font-size: 1.4em;
+        color: rgba(255,255,255,0.9);
+        font-weight: 300;
+    }
+
+    .project-card {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(255,255,255,0.95);
+        border-radius: var(--radius);
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 1.5rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    }
+
+    .project-icon img {
+        width: 100%;
+        filter: drop-shadow(0 2px 4px var(--secondary));
+    }
+
+    .project-slogan {
+        color: var(--secondary);
+        font-size: 1.8em;
+        margin-bottom: 1rem;
+    }
+
+    .project-description {
+        line-height: 1.8;
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+    }
+
+    .highlight {
+        color: var(--primary);
+        font-weight: 600;
+        position: relative;
+        padding: 0 0.3rem;
+    }
+
+    .highlight::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: currentColor;
+        opacity: 0.3;
+    }
+
+    @media (max-width: 768px) {
+        .project-card {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .project-icon {
+            margin: 0 auto 1.5rem;
+            max-width: 80px;
+        }
     }
 </style>
                 </div>
