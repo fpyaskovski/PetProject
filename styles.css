@@ -565,3 +565,48 @@ button:hover {
 .gallery-item.loaded {
     opacity: 1 !important;
 }
+/* Фоновый градиент */
+body {
+    background: linear-gradient(
+        45deg,
+        var(--primary) 0%,
+        var(--accent) 30%,
+        var(--background) 60%
+    );
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Корректировка прозрачности */
+section,
+.content-wrapper,
+.gallery-container,
+.booking-grid,
+.video-wrapper,
+.downloads-container {
+    background: rgba(255,255,255,0.93) !important;
+    backdrop-filter: blur(8px);
+}
+
+.nav,
+.social-block {
+    background: rgba(144, 176, 96, 0.9) !important;
+    backdrop-filter: blur(4px);
+}
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(
+            30deg,
+            var(--primary) 0%,
+            var(--accent) 50%,
+            var(--background) 100%
+        );
+        background-attachment: fixed;
+    }
+}
