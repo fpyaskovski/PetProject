@@ -48,9 +48,9 @@
             <h2>Кӧрӱмдердиҥ jыйнагы<br><small>Галерея</small></h2>
             <!-- Превью видео -->
              <div class="video-wrapper">
-        <div class="video-preview" 
-             data-video-src="https://vkvideo.ru/video535236440_456239630" 
-             onclick="openVideoModal(this)">
+       <div class="video-preview" 
+     data-video-src="https://vk.com/video_ext.php?oid=535236440&id=456239630&hash=abc123" <!-- Ваша прямая ссылка -->
+     onclick="openVideoModal(this)">
             <img src="./my_folder/logo.jpg" 
                  alt="Превью видео" 
                  loading="lazy"
@@ -235,25 +235,17 @@
         };
 
         // Функции для видео
-     const openVideoModal = (element) => {
-        const videoSrc = element.getAttribute('data-video-src');
-        const videoPlayer = document.getElementById('videoPlayer');
-        
-        // Устанавливаем источник видео
-        videoPlayer.querySelector('source').src = videoSrc;
-        videoPlayer.load(); // Перезагружаем видео
-        videoPlayer.play(); // Автовоспроизведение (опционально)
-        
-        // Показываем модальное окно
-        document.getElementById('videoModal').style.display = 'flex';
-    };
-
-      const closeVideoModal = () => {
-        const videoPlayer = document.getElementById('videoPlayer');
-        videoPlayer.pause(); // Останавливаем видео
-        videoPlayer.querySelector('source').src = ''; // Очищаем источник
-        document.getElementById('videoModal').style.display = 'none';
-    };
+const openVideoModal = (element) => {
+    const videoSrc = element.getAttribute('data-video-src');
+    const videoHTML = `
+        <video controls autoplay class="video-player">
+            <source src="${videoSrc}" type="video/mp4">
+            Ваш браузер не поддерживает видео тег.
+        </video>
+    `;
+    document.getElementById('videoContainer').innerHTML = videoHTML;
+    document.getElementById('videoModal').style.display = 'flex';
+};
 
         window.onclick = (e) => {
             if (e.target === document.getElementById('videoModal')) closeVideoModal();
