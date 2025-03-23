@@ -47,17 +47,17 @@
         <section id="gallery">
             <h2>Кӧрӱмдердиҥ jыйнагы<br><small>Галерея</small></h2>
             <!-- Превью видео -->
-             <div class="video-wrapper">
-       <div class="video-preview" 
-     data-video-src="https://vk.com/video_ext.php?oid=535236440&id=456239630" <!-- Ваша прямая ссылка -->
-    
-            <img src="/my_folder/logo.jpg" 
-                 alt="Превью видео" 
-                 loading="lazy"
-                 decoding="async">
-            <div class="play-button"></div>
-        </div>
+       <div class="video-wrapper">
+    <div class="video-preview" 
+         data-video-src="https://vk.com/video_ext.php?oid=535236440&id=456239630&hash=abc123" 
+         onclick="openVideoModal(this)">
+        <img src="./my_folder/logo.jpg" 
+             alt="Превью видео" 
+             loading="lazy"
+             decoding="async">
+        <div class="play-button"></div>
     </div>
+</div>
 
             <!-- Галерея изображений -->
         <!-- Галерея -->
@@ -243,6 +243,23 @@ const openVideoModal = (element) => {
 };
 
 const closeVideoModal = () => {
+    document.getElementById('videoModal').style.display = 'none';
+    document.getElementById('videoPlayer').innerHTML = '';
+};
+        document.addEventListener('click', (e) => {
+    if (e.target === document.getElementById('videoModal')) {
+        closeVideoModal();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeVideoModal();
+    }
+});
+
+// Убедитесь, что функция closeVideoModal объявлена глобально
+window.closeVideoModal = () => {
     document.getElementById('videoModal').style.display = 'none';
     document.getElementById('videoPlayer').innerHTML = '';
 };
