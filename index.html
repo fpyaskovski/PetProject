@@ -147,14 +147,13 @@
     </div>
 
     <!-- Виджет VK -->
-  <div class="video-modal" id="videoModal">
+<div class="video-modal" id="videoModal">
     <div class="video-modal-content">
         <span class="modal-close" onclick="closeVideoModal()">&times;</span>
-        <video controls id="videoPlayer" class="video-iframe-container">
-            <source src="" type="video/mp4">
-        </video>
+        <div id="videoPlayer" class="video-iframe-container"></div>
     </div>
 </div>
+
 
     <!-- Социальные сети -->
     <div class="social-block">
@@ -238,22 +237,15 @@
         // Функции для видео
 const openVideoModal = (element) => {
     const videoSrc = element.getAttribute('data-video-src');
-    const videoHTML = `
-        <video controls autoplay class="video-player">
-            <source src="${videoSrc}" type="video/mp4">
-            Ваш браузер не поддерживает видео тег.
-        </video>
-    `;
-    document.getElementById('videoContainer').innerHTML = videoHTML;
+    const iframeHTML = `<iframe src="${videoSrc}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+    document.getElementById('videoPlayer').innerHTML = iframeHTML;
     document.getElementById('videoModal').style.display = 'flex';
 };
 
-        window.onclick = (e) => {
-            if (e.target === document.getElementById('videoModal')) closeVideoModal();
-            if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display = 'none';
-        };
-
-        document.addEventListener('keydown', (e) => e.key === 'Escape' && closeVideoModal());
+const closeVideoModal = () => {
+    document.getElementById('videoModal').style.display = 'none';
+    document.getElementById('videoPlayer').innerHTML = '';
+};
 
         document.addEventListener('DOMContentLoaded', init);
         // Автоматическое добавление класса "loaded" для изображений галереи
